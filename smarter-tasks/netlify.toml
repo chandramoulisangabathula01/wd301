@@ -1,3 +1,5 @@
 [build]
+  base = "smarter-tasks"
   command = "npm run build"
-  publish = "/opt/build/repo/smarter-tasks/dist"
+  publish = "dist"
+  functionsDirectory = "netlify/functions"
