@@ -26,13 +26,15 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState>{
 
     render() {
         return (
-            <form onSubmit={this.addTask}>
-                <input type="text" id="todoTitle" className="w-full p-2 border border-black rounded mb-4" value={this.state.title} placeholder="Title" onChange={this.titleUpdate} />
-                <input type="text" id="todoDescription" className="w-full p-2 border border-black rounded mb-4" value={this.state.description} placeholder="description" onChange={this.descriptionUpdate} />
-                {/* <button type="submit">Add item</button> */}
+            <form onSubmit={this.addTask} >
+                <div  >
+                    <input type="text" id="todoTitle" className="w-full p-2 border hover:border-red border-black rounded mb-4" value={this.state.title} placeholder="Title" onChange={this.titleUpdate} />
+                    <input type="text" id="todoDescription" className="w-full p-2 border border-black rounded mb-4" value={this.state.description} placeholder="description" onChange={this.descriptionUpdate} />
+                    {/* <button type="submit">Add item</button> */}
 
-                <input type="date" id="todoDueDate" className="w-full p-2 border border-black rounded mb-4" value={this.state.dueDate} onChange={this.dueDateUpdate} placeholder="Due Date" />
-                <button type="submit" id="addTaskButton" className="w-full bg-blue-500 text-white py-2 px-4 rounded">Add item</button>
+                    <input type="date" id="todoDueDate" className="w-full p-2 border border-black rounded mb-4" value={this.state.dueDate} onChange={this.dueDateUpdate} placeholder="Due Date" />
+                    <button type="submit" id="addTaskButton" className="w-full bg-green-400 text-white py-2 px-4 rounded hover:bg-green-500">Add item</button>
+                </div>
             </form>
         )
     }
