@@ -1,15 +1,10 @@
 import React from "react";
 import Task from "./Task";
-// import { TaskItem } from "./types";
+import { TaskItem } from "./types";
 interface Props {
     tasks: TaskItem[];
 }
-interface TaskItem {
-    dueDate: string;
-    description: string;
-    title: string;
 
-}
 interface State { }
 
 class TaskList extends React.Component<Props, State> {
