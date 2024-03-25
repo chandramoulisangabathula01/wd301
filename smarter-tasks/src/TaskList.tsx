@@ -28,7 +28,7 @@ const TaskList = (props: Props) => {
       {props.tasks.map((task,idx)=>(
         <li key={idx}>
           <Task dueDate={task.dueDate} description={task.description} title={task.title}/>
-          <button className="w-fit h-fit text-white px-5 rounded-lg mb-1 bg-red-600" 
+          <button className="deleteTaskButton w-fit h-fit text-white px-5 rounded-lg mb-1 bg-red-600" 
           onClick={()=>handleDelete(idx)}
           >Delete Task</button>
         </li>
