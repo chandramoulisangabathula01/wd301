@@ -8,8 +8,6 @@ import TaskListPage from "./pages/TaskListPage";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Signin from "./pages/Signin";
 import ProtectedRoute from "./ProtectedRoute";
-
-import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
 import Notfound from "./pages/NotFound";
 
