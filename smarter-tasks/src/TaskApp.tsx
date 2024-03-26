@@ -23,7 +23,7 @@ const TaskApp = () => {
     const deleteTask = (index: number)=>{
         const updatedTasks = [...taskAppState.tasks];
         updatedTasks.splice(index,1);
-        setTaskAppState({tasks:updatedTasks});
+        setTaskAppState({tasks: updatedTasks});
     };
 
 
