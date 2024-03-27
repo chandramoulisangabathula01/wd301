@@ -8,7 +8,6 @@ import TaskListPage from "./pages/TaskListPage";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Signin from "./pages/Signin";
 import ProtectedRoute from "./ProtectedRoute";
-
 import Layout from "./Layout";
 import Notfound from "./pages/Notfound";
 
@@ -37,22 +36,18 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "home",
+        path: "/home",
         element: <HomePage />,
       },
       {
-        path: "tasks",
+        path: "/tasks",
         element: <TaskListPage />,
       },
       {
-        path: "tasks/:id",
+        path: "/tasks/:id",
         element: <TaskDetailsPage />,
       },
-      // Redirect all other routes to NotFound
-      {
-        path: '*',
-        element: <Navigate to="/notfound" />,
-      },
+      
     ],
   }
 ]);
