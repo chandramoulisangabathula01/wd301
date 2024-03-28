@@ -13,14 +13,6 @@ import Notfound from "./pages/Notfound";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Navigate to="/signin" replace />,
-  },
-  {
-    path:"*",
-    element: <Navigate to="/notfound" replace />
-  },
-  {
     path: "/signin",
     element: <Signin />,
   },
@@ -47,9 +39,12 @@ const router = createBrowserRouter([
         path: "/tasks/:id",
         element: <TaskDetailsPage />,
       },
-      
     ],
-  }
+  },
+  {
+    path:"*",
+    element: <Navigate to="/notfound" replace />
+  },
 ]);
 
 const App = () => {
