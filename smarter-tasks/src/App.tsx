@@ -13,6 +13,10 @@ import Notfound from "./pages/Notfound";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <Navigate to="/signin" replace />,
+  },
+  {
     path: "/signin",
     element: <Signin />,
   },
@@ -20,6 +24,7 @@ const router = createBrowserRouter([
     path: "/notfound",
     element: <Notfound/>
   },
+  
   {
     element: (
       <ProtectedRoute>
@@ -45,6 +50,7 @@ const router = createBrowserRouter([
     path:"*",
     element: <Navigate to="/notfound" replace />
   },
+  
 ]);
 
 const App = () => {
