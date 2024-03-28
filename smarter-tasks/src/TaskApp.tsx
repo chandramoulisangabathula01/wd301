@@ -1,30 +1,47 @@
-
 import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import './App.css'
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import React from "react";
 
 interface TaskAppState {
     tasks: TaskItem[];
 }
 
-
 const TaskApp = () => {
 
-    const addTask = (task: TaskItem) => {
-        setTaskAppState({ tasks: [...taskAppState.tasks, task] });
-    };
+    
 
     const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
         tasks: [],
     });
 
+    React.useEffect(() => {
+        const id = setTimeout(() => {
+          console.log(`Saved ${taskAppState.tasks.length} items to backend...`);
+        }, 5000);
+        return () => {
+          console.log("cancel any existing n/w call");
+          clearTimeout(id);
+        };
+    }, [taskAppState.tasks]);
+
+    // added the task 
+    const addTask = (task: TaskItem) => {
+        console.log("Adding task:", task);
+        setTaskAppState({ tasks: [...taskAppState.tasks, task] });
+    };
+
+    // delete the task 
     const deleteTask = (index: number)=>{
         const updatedTasks = [...taskAppState.tasks];
         updatedTasks.splice(index,1);
         setTaskAppState({tasks: updatedTasks});
     };
+
+    
+    
 
 
     return (
