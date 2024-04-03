@@ -21,7 +21,7 @@ const TaskDetailsPage: React.FC = () => {
     }
   );
   
-  const task = taskAppState.tasks.find(task => task.id === id);
+  const task = taskAppState.tasks.find(task => task.id.toString() === id);
 
   return (
     <div className="bg-white shadow-md rounded-md p-4 m-8">

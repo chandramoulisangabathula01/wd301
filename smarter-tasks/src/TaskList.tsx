@@ -16,9 +16,6 @@ const TaskList = (props: Props) => {
         <li key={idx}>
           <Task item={task}
           removeTask={()=> handleDelete(idx)} />
-          {/* <button className="deleteTaskButton w-fit h-fit text-white px-5 rounded-lg mb-1 bg-red-600" 
-          onClick={()=>handleDelete(idx)}
-          >Delete Task</button> */}
         </li>
       ))}
     </ul>
