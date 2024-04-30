@@ -80,7 +80,7 @@ export const fetchComment = async (
       type: CommentListAvailableAction.FETCH_COMMENT_SUCCESS,
       payload: data,
     });
-    console.log("API response data:", data);
+    console.log("API response data:"  , data);
 
   } catch (error) {
     console.error("Operation failed:", error);
