@@ -50,3 +50,45 @@ export const addComments = async (
   }
 };
 
+export const fetchComment = async (
+  dispatch: CommentDispatch,
+  projectID: string,
+  taskID: string
+) => {
+  const token = localStorage.getItem("authToken") ?? "";
+  try {
+    dispatch({ type: CommentListAvailableAction.FETCH_COMMENT_REQUEST });
+    const response = await fetch(
+      `${API_ENDPOINT}/projects/${projectID}/tasks/${taskID}/comments`, // APIS URL
+      {
+        method: "GET", // FOR GETTING THE DATA
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    // ACCESS IS FAILED TO GET COMMENTS FROM THE API THEN THROW THIS ERROR
+    if (!response.ok) {
+      throw new Error("FAILED TO ACCESS COMMENTS");
+    }
+
+    const data = await response.json();
+
+    dispatch({
+      type: CommentListAvailableAction.FETCH_COMMENT_SUCCESS,
+      payload: data,
+    });
+    console.log("API response data:", data);
+
+  } catch (error) {
+    console.error("Operation failed:", error);
+    dispatch({
+      type: CommentListAvailableAction.FETCH_COMMENT_FAILURE,
+      payload: "CANNOT ACCESS COMMENTS",
+    });
+
+    throw error;
+  }
+};
