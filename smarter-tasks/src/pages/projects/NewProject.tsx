@@ -49,6 +49,7 @@ const NewProject = () => {
         <>
       <button
         type="button"
+        id="newProjectBtn"
         onClick={openModal}
         className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
