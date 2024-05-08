@@ -1,7 +1,8 @@
 
-
+// import React, { lazy, Suspense } from 'react';
 import AccountLayout from "../layouts/account"
 import ProtectedRoute from "../ProtectedRoute"
+
 import NewTask from "../pages/tasks/NewTask";
 // authentication setup
 import Signin from "../pages/signin"
@@ -15,6 +16,7 @@ import ProjectDetails from "../pages/project_details";
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import TaskDetailsContainer from "../pages/tasks/TaskDetailsContainer";
+
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/account/projects" replace /> },
   {
@@ -38,6 +40,9 @@ const router = createBrowserRouter([
         <AccountLayout />
       </ProtectedRoute>
     ),
+
+    ErrorBoundary: () => <>Failed to load the page</>,
+
     children: [
       { index: true, element: <Navigate to="/account/projects" replace /> },
       {

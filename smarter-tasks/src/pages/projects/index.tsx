@@ -1,5 +1,7 @@
 import ProjectList from "./ProjectList";
 import NewProject from "./NewProject";
+import { Suspense } from "react";
+import ErrorBoundary from "../../components/ErrorBoundary";
 
 
 const Projects = () => {
@@ -9,7 +11,11 @@ const Projects = () => {
         <h2 className="text-2xl font-medium tracking-tight">Projects</h2>
         <NewProject />
       </div>
+      <ErrorBoundary>
+      <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
       <ProjectList />
+      </Suspense>
+      </ErrorBoundary>
     </>
   )
 }
