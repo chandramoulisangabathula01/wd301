@@ -30,23 +30,23 @@ export default defineConfig({
             "type": "image/png",
             "sizes": "32x32"
           },
-          {
-            "src": "/pwa-192x192.png",
-            "type": "image/png",
-            "sizes": "192x192"
-          },
-          {
-            "src": "/pwa-icon.png",
-            "type": "image/png",
-            "sizes": "144x144",
-            "purpose": "any"
-          },
-          {
-            "src": "/pwa-512x512.png",
-            "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "any maskable" // Icon format that ensures that your PWA icon looks great on all Android devices
-          }
+          // {
+          //   "src": "/pwa-192x192.png",
+          //   "type": "image/png",
+          //   "sizes": "192x192"
+          // },
+          // {
+          //   "src": "/pwa-icon.png",
+          //   "type": "image/png",
+          //   "sizes": "144x144",
+          //   "purpose": "any"
+          // },
+          // {
+          //   "src": "/pwa-512x512.png",
+          //   "type": "image/png",
+          //   "sizes": "512x512",
+          //   "purpose": "any maskable" // Icon format that ensures that your PWA icon looks great on all Android devices
+          // }
         ],
         theme_color: '#AAF',
       },
