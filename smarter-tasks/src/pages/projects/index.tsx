@@ -1,18 +1,18 @@
-import ProjectList from "./ProjectList";
+// import ProjectList from "./ProjectList";
 import NewProject from "./NewProject";
-import { Suspense } from "react";
+import React,{ Suspense } from "react";
 import ErrorBoundary from "../../components/ErrorBoundary";
 
-
+const ProjectList = React.lazy(() => import("./ProjectList"));
 const Projects = () => {
   return (
     <>
-       <div className="flex justify-between">
+      <div className="flex justify-between">
         <h2 className="text-2xl font-medium tracking-tight">Projects</h2>
         <NewProject />
       </div>
       <ErrorBoundary>
-        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+        <Suspense fallback={<div className="suspense-loading" > Loading... </div>}>
           <ProjectList />
         </Suspense>
       </ErrorBoundary>

@@ -16,9 +16,9 @@ export default function ProjectListItems() {
     return <span>{errorMessage}</span>;
   }
   
-  if (projects.length === 0) {
-    throw Error("Error!!!");
-  }
+  // if (projects.length === 0) {
+  //   throw Error("Error!!!");
+  // }
 
   return (
     <>
