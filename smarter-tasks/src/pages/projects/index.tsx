@@ -12,9 +12,9 @@ const Projects = () => {
         <NewProject />
       </div>
       <ErrorBoundary>
-      <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
-      <ProjectList />
-      </Suspense>
+        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+          <ProjectList />
+        </Suspense>
       </ErrorBoundary>
     </>
   )

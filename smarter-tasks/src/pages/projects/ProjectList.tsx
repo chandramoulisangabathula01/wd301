@@ -92,14 +92,18 @@
 //   );
 // };
 // export default ProjectList;
-
-import React from "react";
+import React, { Suspense } from "react";
 import ProjectListItems from "./ProjectListItems";
+import ErrorBoundary from "../../components/ErrorBoundary";
 
 const ProjectList: React.FC = () => {
   return (
     <div className="grid gap-4 grid-cols-4 mt-5">
-      <ProjectListItems />
+      <ErrorBoundary>
+        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+          <ProjectListItems />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
