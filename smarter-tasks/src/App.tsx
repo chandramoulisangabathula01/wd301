@@ -65,14 +65,12 @@
 // }
 // export default App;
 
-import  { Suspense,useContext } from "react";
+import { Suspense, useContext } from "react";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import router from "./routes"
-import { ThemeContext } from "./context/theme";
-
 // To do that, first I'll import the `ProjectsProvider` in the `App` component.
-
+import { ThemeContext } from "./context/theme";
 import { ProjectsProvider } from "./context/projects/context";
 import { MembersProvider } from "./context/members/context";
 import { CommentProvider } from "./context/comment/context";
@@ -81,15 +79,15 @@ import { CommentProvider } from "./context/comment/context";
 const App = () => {
   const { theme } = useContext(ThemeContext)
   return (
-     <div className={`h-screen w-full mx-auto py-3 ${theme === "dark" ? "dark" : ""}`}>
+    <div className={`h-screen w-full mx-auto py-3 ${theme === "dark" ? "dark" : ""}`}>
       <CommentProvider>
-      <ProjectsProvider>
-        <MembersProvider>
-        <Suspense fallback={<>Loading...</>}>
-          <RouterProvider router={router} />
-        </Suspense>
-        </MembersProvider>
-      </ProjectsProvider>
+        <ProjectsProvider>
+          <MembersProvider>
+            <Suspense fallback={<>Loading...</>}>
+              <RouterProvider router={router} />
+            </Suspense>
+          </MembersProvider>
+        </ProjectsProvider>
       </CommentProvider>
     </div>
   );

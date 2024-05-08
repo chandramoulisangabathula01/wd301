@@ -36,6 +36,12 @@ export default defineConfig({
             "sizes": "192x192"
           },
           {
+            "src": "/pwa-icon.png",
+            "type": "image/png",
+            "sizes": "144x144",
+            "purpose": "any"
+          },
+          {
             "src": "/pwa-512x512.png",
             "type": "image/png",
             "sizes": "512x512",

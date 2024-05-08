@@ -27,10 +27,9 @@ const router = createBrowserRouter([
     path: "/signup", 
     element: <Signup />
   },
-  
   { 
     path: "/logout", 
-    element : <Logout /> 
+    element: <Logout /> 
   },
   // Protected Routes
   {
@@ -40,9 +39,7 @@ const router = createBrowserRouter([
         <AccountLayout />
       </ProtectedRoute>
     ),
-
     ErrorBoundary: () => <>Failed to load the page</>,
-
     children: [
       { index: true, element: <Navigate to="/account/projects" replace /> },
       {
@@ -61,12 +58,13 @@ const router = createBrowserRouter([
                   { index: true, element: <Navigate to="../" /> },
                   {
                     path: "new",
-                    // Render `NewTask` component
                     element: <NewTask />,
                   },
                   {
                     path: ":taskID",
-                    children: [{ index: true, element: <TaskDetailsContainer /> }],
+                    children: [
+                      { index: true, element: <TaskDetailsContainer /> },
+                    ],
                   },
                 ],
               },
@@ -78,7 +76,6 @@ const router = createBrowserRouter([
         path: "members",
         element: (<Members />)
       },
-      
     ],
   },
 ]);
